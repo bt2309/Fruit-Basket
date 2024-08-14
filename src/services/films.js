@@ -1,8 +1,8 @@
-const BASE_URL = "https://mhw-db.com/monsters";
+const BASE_URL = "https://swapi.dev/api/films/";
 
-export async function getFruits() {
+export async function getFilms() {
   const url = `${BASE_URL}`;
-//   const url = `${BASE_URL}/fruits`;
+//   const url = `${BASE_URL}/films`;
   try {
     const response = await fetch(url);
     if (!response.ok) {
@@ -17,8 +17,8 @@ export async function getFruits() {
   }
 }
 
-export async function searchFruits(search) {
-  const url = `${BASE_URL}/fruits?search=${search}`;
+export async function searchFilms(search) {
+  const url = `${BASE_URL}/films?search=${search}`;
   try {
     const response = await fetch(url);
     if (!response.ok) {

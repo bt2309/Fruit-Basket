@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"; 
 import FruitsListPage from "./components/FruitsListPage";
 import FruitsSearch from "./components/FruitsSearch";
-import { getFruits } from "./services/api";
+import { getFruits } from "./services/films";
 import './App.css'
 
 function App() {
