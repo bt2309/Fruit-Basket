@@ -2,50 +2,49 @@
 
 ## API Choice
 
-Fruityvice
+Star Wars API
 
 ## User stories
 
-- create an app to schedule daily intake of fruits
-- help user gather desired fruit(s) into cart
-- calculate info e.g. calories, fat, sugar intake etc. in carts
+- Provide information about the different Star Wars films
+- Provide information about the different characters present throughout the different films
+- Display characters present per film
+- Add / Edit / Delete film or characters
 
 ## Sample of API routes, (use postman or bruno ) to store
 
-- New Fruit (GET) : add new fruits into cart
-- Update Fruit Details (PUT) : update details of fruits
-- Remove Fruit (DELETE) : remove fruits from cart
-- New Cart (GET) : add new cart to calendar
-- Update Cart (PUT) : update fruits in cart
-- Remove Cart (DELETE) : remove cart from calendar
+- Film details (GET) : display film details
+- Character details (GET) : display character details
+- Add Films (POST)
+- Add Characters (POST)
+- Update Film details (PUT) : edit film details
+- Update Character details (PUT) : edit character details
+- Delete Films (DELETE)
+- Delete Characters (DELETE)
 
 ## Wireframes
 
 ### Paired with react-router routes
 
-- FruitListPage
-- NewFruitFormPage
-- FruitDetailsPage
-- FruitEditPage
-- CartListPage
-- NewCartFormPage
-- CartDetailsPage
-- CartEditPage
+- FilmsList
+- CharactersList
+- FilmDetail
+- CharacterDetail
+- FilmForm
+- CharacterForm
 
 ### Identify the Components / state / fetch in the wireframe
 
 useState()
 
-- newfruit, setNewFruit
-- addfruit, setAddFruit
-- newCart, setNewCart
-- addCart, setAddCart
-- calculate, setCalculate
+- films, setFilms
+- characters, setCharacters
 
 fetch()
 
 - getData
-- handleAddFruit
+- getFilms
+- getCharacters
 
 ## Any existing libraries / css you intent to use
 
