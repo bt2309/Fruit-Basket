@@ -1,4 +1,4 @@
-import FruitCard from "./FruitCard";
+import FruitCard from "./FilmCard";
 
 export default function FruitsListPage({ fruits }) {
     if (!fruits || fruits.length === 0) {

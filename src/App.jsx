@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"; 
-import FruitsListPage from "./components/FruitsListPage";
-import FruitsSearch from "./components/FruitsSearch";
+import FruitsListPage from "./components/FilmListPage";
+import FruitsSearch from "./components/FilmSearch";
 import { getFruits } from "./services/films";
 import './App.css'
 
