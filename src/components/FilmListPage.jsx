@@ -1,15 +1,15 @@
-import FruitCard from "./FilmCard";
+import FilmCard from "./FilmCard";
 
-export default function FruitsListPage({ fruits }) {
-    if (!fruits || fruits.length === 0) {
-        return <p>No fruits</p>;
+export default function FilmListPage({ films }) {
+    if (!films || films.length === 0) {
+        return <p>No films</p>;
     }
 
     return (
         <>
-            <p>FruitsList</p>
-            {fruits.map((fruit) => (
-                <FruitCard key={fruit.url} fruit={fruit} />
+            <p>Films List</p>
+            {films.map((film) => (
+                <FilmCard key={film.episode_id} film={film} />
             ))}
         </>
     );

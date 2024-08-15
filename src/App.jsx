@@ -1,30 +1,31 @@
 import { useEffect, useState } from "react"; 
-import FruitsListPage from "./components/FilmListPage";
-import FruitsSearch from "./components/FilmSearch";
-import { getFruits } from "./services/films";
+import FilmListPage from "./components/FilmListPage";
+import FilmSearch from "./components/FilmSearch";
+import { getFilms } from "./services/films";
+import NavBar from "./components/NavBar";
 import './App.css'
 
 function App() {
-    const [ fruits, setFruits ] = useState([]);
+    const [ films, setFilms ] = useState([]);
 
     useEffect(() => {
-        const loadFruits = async () => {
-            const data = await getFruits();
-            setFruits(data);
+        const loadFilms = async () => {
+            const data = await getFilms();
+            setFilms(data);
         };
 
-        loadFruits();
+        loadFilms();
     }, []);
 
     return (
         <>         
-            <h1>Fruits Basket</h1>
-            <FruitsSearch setFruits={setFruits} />
-            <FruitsListPage fruits={fruits.results} />
+            <h1>Star Wars</h1>
+            <NavBar />
+            <FilmSearch setFilms={setFilms} />
+            <FilmListPage films={films.results} />
             <nav>
-                <h2>Fruits List</h2>
-                <h2>Cart</h2>
-                <h2>Calendar</h2>
+                <h2>Films List</h2>
+                <h2>Characters</h2>
             </nav>
         </>
     )

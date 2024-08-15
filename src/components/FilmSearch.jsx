@@ -1,12 +1,12 @@
-import { searchFruits } from "../services/films";
+import { searchFilms } from "../services/films";
 
-export default function FruitsSearch({ setFruits }) {
+export default function FruitsSearch({ setFilms }) {
     const handleSearch = async (event) => {
         event.preventDefault();
         const search = event.target.seatch.value;
-        const data = await searchFruits(search);
+        const data = await searchFilms(search);
         // console.log(data);
-        setFruits(data);
+        setFilms(data);
     };
 
     return (

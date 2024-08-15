@@ -3,19 +3,19 @@ export default function FilmCard({ film }) {
       <>
         <dl>
           <dt>Title</dt>
-          <dd>{film.results.title}</dd>
+          <dd>{film.title}</dd>
 
           <dt>Episode</dt>
-          <dd>{film.results.episode_id}</dd>
+          <dd>{film.episode_id}</dd>
 
           <dt>Director</dt>
-          <dd>{film.results.director}</dd>
+          <dd>{film.director}</dd>
   
           <dt>Producer</dt>
-          <dd>{film.results.producer}</dd>
+          <dd>{film.producer}</dd>
   
           <dt>Release Date</dt>
-          <dd>{film.results.release_date}</dd>
+          <dd>{film.release_date}</dd>
 
         </dl>
       </>
