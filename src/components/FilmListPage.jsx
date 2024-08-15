@@ -8,6 +8,8 @@ export default function FilmListPage({ films }) {
     return (
         <>
             <p>Films List</p>
+            {/* <FilmSearch setFilms={setFilms} />
+            <FilmListPage films={films.results} /> */}
             {films.map((film) => (
                 <FilmCard key={film.episode_id} film={film} />
             ))}

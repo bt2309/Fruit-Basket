@@ -1,32 +1,55 @@
+// import "./App.css";
+// import NewFilmPage from "./components/NewFilmPage";
+// import FilmDetailsPage from "./components/FilmDetailsPage";
+// import FilmListPage from "./components/FilmListPage";
+
+// export default function App() {
+//     return (
+//         <>
+//             <h1>Star Wars</h1>
+//             <NewFilmPage />
+//             <FilmDetailsPage />
+//             <FilmListPage />
+//         </>
+//     );
+// }
+
 import { useEffect, useState } from "react"; 
+import { Route, Routes} from "react-router-dom";
+import NavBar from "./components/NavBar";
 import FilmListPage from "./components/FilmListPage";
+import FilmDetailsPage from "./components/FilmDetailsPage";
+import NewFilmPage from "./components/NewFilmPage";
 import FilmSearch from "./components/FilmSearch";
 import { getFilms } from "./services/films";
-import NavBar from "./components/NavBar";
 import './App.css'
 
 function App() {
-    const [ films, setFilms ] = useState([]);
 
-    useEffect(() => {
-        const loadFilms = async () => {
-            const data = await getFilms();
-            setFilms(data);
-        };
-
-        loadFilms();
-    }, []);
+    const [ films, setFilms ] = useState();
+    
+    //     useEffect(() => {
+    //         const loadFilms = async () => {
+    //             const data = await getFilms();
+    //             setFilms(data);
+    //         };
+    
+    //         loadFilms();
+    //     }, []);
 
     return (
-        <>         
+        <>
             <h1>Star Wars</h1>
             <NavBar />
-            <FilmSearch setFilms={setFilms} />
-            <FilmListPage films={films.results} />
-            <nav>
-                <h2>Films List</h2>
-                <h2>Characters</h2>
-            </nav>
+            <Routes>
+                <Route path="/" element={<nav>Home Page</nav>} />
+                <Route path="/films" element={<FilmListPage />} />
+                <Route path="/films/details" element={<FilmDetailsPage />} />
+                <Route path="/films/new" element={<NewFilmPage />} />
+                {/* <Route path="/characters" element={<CharacterListPage />} />
+                <Route path="/characters/details" element={<CharacterDetailPage />} />
+                <Route path="/characters/new" element={<NewCharacterPage />} /> */}
+            </Routes>
         </>
     )
 }
