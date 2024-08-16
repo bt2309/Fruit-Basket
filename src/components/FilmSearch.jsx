@@ -1,4 +1,4 @@
-import { searchFilms } from "../services/films";
+import { searchFilms } from "../services/filmService";
 
 export default function FruitsSearch({ setFilms }) {
     const handleSearch = async (event) => {
