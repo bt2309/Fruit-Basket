@@ -9,15 +9,13 @@ import './App.css'
 
 function App() {
 
-
-    
     return (
         <>
             <h1>Star Wars</h1>
             <NavBar />
             <Routes>
                 <Route path="/" element={<nav>Home Page</nav>} />
-                <Route path="/films" element={<FilmListPage />} />
+                <Route path="films" element={<FilmListPage />} />
                 <Route path="/films/details" element={<FilmDetailsPage />} />
                 <Route path="/films/new" element={<NewFilmPage />} />
                 {/* <Route path="/characters" element={<CharacterListPage />} />
