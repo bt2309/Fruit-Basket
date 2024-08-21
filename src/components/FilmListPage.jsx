@@ -2,9 +2,9 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import FilmCard from "./FilmCard";
 import FilmSearch from "./FilmSearch";
-import { createFilm } from "../services/airtable";
+// import { createFilm } from "../services/airtable";
 
-export default function FilmListPage({ filmList }) {
+export default function FilmListPage() {
 
     const [ films, setFilms ] = useState([]);
 
@@ -30,17 +30,17 @@ export default function FilmListPage({ filmList }) {
       }
     };
   
-    const loadFilms = async () => {
-      const temp = [];
-      for (const newFilm of filmList) {
-        const data = await createFilm(newFilm);
-        temp.push(data);
-      }
-    }
+    // const loadFilms = async () => {
+    //   const temp = [];
+    //   for (const newFilm of filmList) {
+    //     const data = await createFilm(newFilm);
+    //     temp.push(data);
+    //   }
+    // }
 
     useEffect(() => {
       getFilm();
-      loadFilms();
+      // loadFilms();
     }, []);
 
     return (

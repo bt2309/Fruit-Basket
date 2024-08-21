@@ -54,3 +54,26 @@ export async function getData() {
       console.error(error.message);
     }
   };
+
+
+// export async function handleDelete(filmId) {
+//     const url = `https://api.airtable.com/v0/appRfcriPedzqlVwe/Films/${filmId}`;
+//     try {
+//       const response = await fetch(url, {
+//         method: "DELETE",
+//         headers: {
+//             "Content-Type": "application/json",
+//             Authorization:
+//               "Bearer patTMe0YVagt5lVQG.b9192ab1401a42a693377a0c50db92fa39f98ae55d4ec4b31600b2aa6037b8c7",
+//           },
+//       });
+//       if (!response.ok) {
+//         throw new Error(`Response status: ${response.status}`);
+//       }
+
+//       await response.json();
+//       setFilms(films.filter((film) => film.id !== filmId));
+//     } catch (error) {
+//       console.error(error.message);
+//     }
+//   };
