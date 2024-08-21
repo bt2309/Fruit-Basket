@@ -1,0 +1,21 @@
+meta {
+  name: New SW Film
+  type: http
+  seq: 5
+}
+
+post {
+  url: http://localhost:3000/films
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "title": "test",
+    "episode_id": 7,
+    "director": "mr.test",
+    "producer": "mr.notest",
+    "release_date": 2024
+  }
+}

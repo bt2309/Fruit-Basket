@@ -1,6 +1,21 @@
 // import { useState } from "react";
 import { NavLink } from "react-router-dom";
 
+export default function NavBar() {
+    
+    return (
+        
+        <nav id="nav-bar">
+            <NavLink to="/">Home</NavLink>
+            <NavLink to="/films">Films</NavLink>
+            <NavLink to="/characters">Characters</NavLink>
+        </nav>
+    
+        
+    
+);
+}
+
 // const createUser = async() => {
 //     const url = `https://api.airtable.com/v0/appRfcriPedzqlVwe/Table%201`;
 //     try {
@@ -22,37 +37,3 @@ import { NavLink } from "react-router-dom";
 //       console.error(error.message);
 //     }
 //   }
-
-export default function NavBar() {
-
-    // const [user, setUser] = useState([])
-    // const handleSubmit = async (event) => {
-    //     event.preventDefault()
-    //     await createUser({name: user})
-
-
-    // }
-    // const handleChange = (event) =>{
-    //     setUser(event.target.value)
-
-    // }
-    
-    return (
-   
-   <nav id="nav-bar">
-            <NavLink to="/">Home</NavLink>
-            <NavLink to="/films">Films</NavLink>
-            {/* <form onSubmit = {handleSubmit}>
-            <input
-            name = "username"
-            value = {user}
-            onChange = {handleChange}
-            ></input>
-            <button type = "submit">Submit</button>
-            </form> */}
-        </nav>
-    
-        
-    
-    );
-}

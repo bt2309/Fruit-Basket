@@ -1,16 +1,13 @@
+import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-// import FilmCard from "./FilmCard";
+import FilmCard from "./FilmCard";
+import FilmSearch from "./FilmSearch";
 // import { getFilms } from "/src/services/filmService";
 
 
 export default function FilmListPage() {
-    // if (!films || films.length === 0) {
-    //     return <p>No films</p>;
-    // }
 
     const [ films, setFilms ] = useState([]);
-
-    console.log("test");
 
     const getFilm = async () => {
       const url = `https://swapi.dev/api/films/?format=json`;
@@ -39,12 +36,21 @@ export default function FilmListPage() {
     }, []);
 
     return (
-        <>     
-        {films.map((event, index) => (
-            <div key = {index}>
-            <p scope = "row" key = {index}>{event.title}</p>
-            </div>
-        ))}            
+        <>    
+        <h2>Films</h2> 
+        <FilmSearch setFilms={setFilms} />
+        <Link to="/films/new">
+          <button>Add Film</button>
+        </Link>
+        <section>
+          <ul>
+            {films.map((film, index) => (
+              <li key = {index}>
+                <FilmCard key={film.results} film={film} />
+              </li>
+            ))}
+          </ul>  
+        </section>         
         </>
     );
 }

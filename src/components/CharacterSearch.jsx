@@ -1,14 +1,14 @@
 import { useState } from "react";
-import { searchFilms } from "../services/swService";
+import { searchCharacters } from "../services/swService";
 
-export default function FilmSearch({ setFilms }) {
+export default function CharacterSearch({ setCharacters }) {
   const [search, setSearch] = useState("");
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const data = await searchFilms(search);
+    const data = await searchCharacters(search);
     console.log(data);
-    setFilms(data);
+    setCharacters(data);
   };
 
   return (
