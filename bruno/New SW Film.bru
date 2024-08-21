@@ -5,9 +5,18 @@ meta {
 }
 
 post {
-  url: http://localhost:3000/films
+  url: https://api.airtable.com/v0/appRfcriPedzqlVwe/Films?maxRecords=3&view=Grid%20view
   body: json
   auth: none
+}
+
+params:query {
+  maxRecords: 3
+  view: Grid%20view
+}
+
+headers {
+  Authorization: Bearer patTMe0YVagt5lVQG.b9192ab1401a42a693377a0c50db92fa39f98ae55d4ec4b31600b2aa6037b8c7
 }
 
 body:json {

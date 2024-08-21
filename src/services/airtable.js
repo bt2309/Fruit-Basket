@@ -1,9 +1,9 @@
-import debug from "debug";
+// import debug from "debug";
 
-const log = debug("sw:service:api");
+// const log = debug("sw:service:api");
 
 export async function getData() {
-    const url = "https://api.airtable.com/v0/appRfcriPedzqlVwe/Films?maxRecords=3&view=Grid%20view";
+    const url = "https://api.airtable.com/v0/appRfcriPedzqlVwe/Films";
     try {
       const response = await fetch(url, {
         method: "GET",
@@ -30,11 +30,8 @@ export async function getData() {
   }
 
   export const createFilm = async (formData) => {
-    const url = "https://api.airtable.com/v0/appRfcriPedzqlVwe/Films?maxRecords=3&view=Grid%20view";
-    log("formData, %o", formData);
-    const payload = { fields: { ...formData, episode: Number(formData.episode) } };
-    console.log()
-    log("payload, %o", payload);
+    const url = "https://api.airtable.com/v0/appRfcriPedzqlVwe/Films";
+    const payload = { records: [{fields: { ...formData }} ]};
     try {
       const response = await fetch(url, {
         method: "POST",
@@ -51,7 +48,7 @@ export async function getData() {
   
       const json = await response.json();
       const result = { id: json.id, ...json.fields };
-      log("result %o", result);
+    //   console.log(result);
       return result;
     } catch (error) {
       console.error(error.message);

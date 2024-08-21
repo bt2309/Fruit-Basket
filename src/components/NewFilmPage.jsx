@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { createFilm, getData } from "../services/airtable";
 
 export default function NewFilmPage() {
     
+    const navigate = useNavigate();
     const [ films, setFilms] = useState([]);
     const [ formData, setFormData ] = useState({
         title: "",
-        episode: "",
+        episodeId: "",
         director: "",
         producer: "",
         release_date: "",
@@ -26,24 +27,26 @@ export default function NewFilmPage() {
         setFormData({ ...formData, [name]: value });
       };
     
-      const handleCreate = async (event) => {
+      const handleSubmit = async (event) => {
         event.preventDefault();
         const film = await createFilm(formData);
         setFilms([...films, film]);
+        console.log(films);
+        navigate("/films");
       };
     
     return (
         <>
-            <form onSubmit={handleCreate}>
+            <form onSubmit={handleSubmit}>
                 <h3>New Film</h3>
-                <body className="new-form">
+                <div className="new-form">
                 <label>
                     Title:
                     <input name="title" value={formData.title} onChange={handleChange}/>
                 </label>
                 <label>
                     Episode:
-                    <input name="episode" value={formData.episode} onChange={handleChange}/>
+                    <input name="episodeId" value={formData.episodeId} onChange={handleChange}/>
                 </label>
                 <label>
                     Director:
@@ -57,10 +60,8 @@ export default function NewFilmPage() {
                     Release Date:
                     <input name="release_date" value={formData.release_date} onChange={handleChange}/>
                 </label>
-                <Link to="/films">
-                    <button>Add</button>
-                </Link>
-                </body>
+                    <button type="submit">Add</button>
+                </div>
             </form>
         </>
     )

@@ -1,4 +1,28 @@
 export default function FilmCard({ film }) {
+
+  // const handleDelete = async (petId) => {
+  //   //* fire the DELETE request
+  //   // const petId = "xxx";
+  //   const url = `http://localhost:3000/pets/${petId}`;
+  //   try {
+  //     const response = await fetch(url, {
+  //       method: "DELETE",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //     });
+  //     if (!response.ok) {
+  //       throw new Error(`Response status: ${response.status}`);
+  //     }
+
+  //     await response.json();
+  //     setPets(pets.filter((pet) => pet.id !== petId));
+  //   } catch (error) {
+  //     console.error(error.message);
+  //   }
+  //   //* update the state
+  // };
+
     return (
       <>
         <dl>
@@ -16,6 +40,8 @@ export default function FilmCard({ film }) {
   
           <dt>Release Date:</dt>
           <dd>{film.release_date}</dd>
+
+          <button>Delete</button>
 
         </dl>
       </>
