@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { createFilm, getData } from "../services/airtable";
 
 export default function NewFilmPage() {
@@ -56,7 +57,9 @@ export default function NewFilmPage() {
                     Release Date:
                     <input name="release_date" value={formData.release_date} onChange={handleChange}/>
                 </label>
-                <button>Add</button>
+                <Link to="/films">
+                    <button>Add</button>
+                </Link>
                 </body>
             </form>
         </>

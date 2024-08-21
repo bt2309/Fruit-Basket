@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function NewCharacterPage() {
     return (
         <>
@@ -24,7 +26,9 @@ export default function NewCharacterPage() {
                     Birth Year:
                     <input/>
                 </label>
+                <Link to="/characters">
                 <button>Add</button>
+                </Link>
                 </body>
             </form>
         </>
